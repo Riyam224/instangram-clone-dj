@@ -1,0 +1,36 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Instagram clone </title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <img src="{% static 'img/logo.PNG' %}" class="brand-img" alt="">
+            <input type="text" class="search-box" placeholder="search">
+            <div class="nav-items">
+                <img src="{% static 'img/home.PNG' %}" class="icon" alt="">
+                <img src="{% static 'img/messenger.PNG' %}" class="icon" alt="">
+                <img src="{% static 'img/add.PNG' %}" class="icon" alt="">
+                <img src="{% static 'img/explore.PNG' %}" class="icon" alt="">
+                <img src="{% static 'img/like.PNG' %}" class="icon" alt="">
+                <div class="icon user-profile"></div>
+            </div>
+        </div>
+    </nav>
+
+    
+    {% block content  %}
+       
+    {% endblock content  %}
+        
+
+
+
+</body>
+</html>
