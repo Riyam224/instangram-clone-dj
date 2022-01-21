@@ -43,14 +43,16 @@
                     // +5 more status card elements.
             </div>
 
-             {% for post   in  object_list %}
+
+            <!-- todo  post list  -->
+             {% for post   in  posts %}
 
              
             <div class="post">
                 <div class="info">
                     <div class="user">
-                        <div class="profile-pic"><img src="{% static 'img/cover 1.png' %}" alt=""></div>
-                        <p class="username">modern_web_channel</p>
+                        <div class="profile-pic"><img src="{{ post.profile.image.url }}" alt=""></div>
+                        <p class="username">{{ post.profile.user.username}}  </p>
                     </div>
                     <img src="{% static 'img/option.PNG' %}" class="options" alt="">
                 </div>
@@ -63,8 +65,9 @@
                         <img src="{% static 'img/save.PNG' %}" class="save icon" alt="">
                     </div>
                     <p class="likes">1,012 likes</p>
-                    <p class="description"><span>username </span> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur tenetur veritatis placeat, molestiae impedit aut provident eum quo natus molestias?</p>
-                    <p class="post-time">2 minutes ago</p>
+                    <p class="description"><span>{{ post.username  }} </span> 
+                    {{ post.caption }} </p>
+                    <p class="post-time">{{ post.created_at| timesince}} ago</p>
                 </div>
                 <div class="comment-wrapper">
                     <img src="{% static 'img/smile.PNG' %}" class="icon" alt="">
