@@ -8,7 +8,11 @@ from .forms  import NewPostForm
 
 def post_list(request):
     posts = Post.objects.all()
-    
+
+    post_name = request.GET.get('post_name')
+    if post_name != '' and post_name is not None:
+        posts = posts.filter(title__icontains=post_name)
+
     return render(request , 'posts/post_list.html' , {
         'posts': posts,
        

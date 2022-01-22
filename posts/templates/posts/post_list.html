@@ -12,7 +12,11 @@
     <nav class="navbar">
         <div class="nav-wrapper">
             <img src="{% static 'img/logo.PNG' %}" class="brand-img" alt="">
-            <input type="text" class="search-box" placeholder="search">
+            <form action="." method="GET" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="post_name" class="search-box" placeholder="search">
+            </form>
+            
             <div class="nav-items">
                 <img src="{% static 'img/home.PNG' %}" class="icon" alt="">
                 <img src="{% static 'img/messenger.PNG' %}" class="icon" alt="">
