@@ -1,12 +1,7 @@
-
-from turtle import pos
-from django.shortcuts import redirect, render
-
+from django.shortcuts import  render
 # Create your views here.
 from .models import Post, Profile
 from .forms  import NewPostForm
-
-
 def post_list(request):
     posts = Post.objects.all()
 
@@ -18,9 +13,6 @@ def post_list(request):
         'posts': posts,
        
     })
-
-
-
 def post_create(request):
     if request.method == 'POST':
         form = NewPostForm(data=request.POST , files=request.FILES)
