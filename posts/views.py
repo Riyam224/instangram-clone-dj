@@ -1,4 +1,5 @@
 
+from turtle import pos
 from django.shortcuts import redirect, render
 
 # Create your views here.
@@ -36,3 +37,14 @@ def post_create(request):
     else:
         form = NewPostForm()
         return render(request , 'posts/post_create.html', {'form': form})
+
+
+
+def profile(request):
+    posts = Post.objects.all()
+    profile = Profile.objects.first()
+    context = {
+        'posts': posts ,
+        'profile' : profile
+    }
+    return render(request , 'profile.html', context)

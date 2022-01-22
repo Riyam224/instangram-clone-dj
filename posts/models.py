@@ -11,7 +11,8 @@ class Profile(models.Model):
     image = models.ImageField(_("image"), upload_to='profile_pics/')
     bio = models.TextField(_("bio") ,blank=True, null=True)
     posts = models.ForeignKey("Post", verbose_name=_("posts"), related_name='profile_posts', on_delete=models.CASCADE)
-
+    # folowers 
+    # following 
     
 
     class Meta:
